@@ -22,7 +22,7 @@ export async function handleSumRewared(event: SubstrateEvent): Promise<void> {
 export async function handleStakingRewarded(event: SubstrateEvent): Promise<void> {
   const {event: {data: [account, newReward]}} = event;
   const entity = new StakingReward(`${event.block.block.header.number}-${event.idx.toString()}`);
-  entity.account = account.toString();
+  entity.accountId = account.toString();
   entity.balance = (newReward as Balance).toBigInt();
   entity.date = event.block.timestamp;
   await entity.save();

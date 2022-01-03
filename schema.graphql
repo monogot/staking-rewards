@@ -1,6 +1,6 @@
 type StakingReward @entity {
   id: ID!
-  account: String!
+  account: SumReward!
   balance: BigInt!
   date: Date!
 }
