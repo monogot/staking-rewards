@@ -1,17 +1,12 @@
-type StarterEntity @entity {
+type StakingReward @entity {
+  id: ID!
+  account: String!
+  balance: BigInt!
+  date: Date!
+}
 
-  id: ID! #id is a required field
-
-  field1: Int!
-
-  field2: String #filed2 is an optional field
-
-  field3: BigInt
-
-  field4: Date
-
-  field5: Boolean
-
-
-
+type SumReward @entity {
+  id: ID!
+  totalReward: BigInt!
+  blockHeight: Int!
 }
